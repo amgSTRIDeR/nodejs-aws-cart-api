@@ -6,9 +6,6 @@ import { AppModule } from './app.module';
 import { Context, Handler } from 'aws-lambda';
 import serverlessExpress from '@vendia/serverless-express';
 
-
-const port = process.env.PORT || 4000;
-
 let cachedServer: Handler;
 
 async function bootstrap() {

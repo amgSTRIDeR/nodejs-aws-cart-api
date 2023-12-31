@@ -97,7 +97,7 @@ const nestWrapperLambda = new NodejsFunction(stack, 'NestWrapperLambdaSt', {
     ],
   },
   environment: {
-    DB_URL: dbUrl,
+    DATABASE_URL: dbUrl,
   },
 });
 
