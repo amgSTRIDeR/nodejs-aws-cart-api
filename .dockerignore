@@ -1,0 +1,15 @@
+# NPM packages folder - we'll let docker install them
+node_modules
+
+# Compiled project folder - we'll let docker compile it
+dist
+
+# Docker files - becase they are not needed in the container
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# AWS files - becase they are not needed in the container
+cdk.out
+cdk.json
+
