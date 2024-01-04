@@ -1,2 +1,2 @@
-export * from './models';
+export * from './cart.entity';
 export * from './services';

@@ -1,28 +1,24 @@
 import { Injectable } from '@nestjs/common';
-
-import { v4 } from 'uuid';
-
-import { User } from '../models';
+import UserRepository, { CreateUserDto } from '../users.repository';
+import { plainToInstance } from 'class-transformer';
+import { User } from '../user.entity';
 
 @Injectable()
 export class UsersService {
-  private readonly users: Record<string, User>;
+  constructor(private readonly repository: UserRepository) {}
 
-  constructor() {
-    this.users = {}
+  async findOne(userId: string): Promise<User> {
+    return plainToInstance(User, await this.repository.findOne(userId));
   }
 
-  findOne(userId: string): User {
-    return this.users[ userId ];
+  async findOneByName(name: string): Promise<User> {
+    return plainToInstance(User, await this.repository.findOneByName(name));
   }
 
-  createOne({ name, password }: User): User {
-    const id = v4();
-    const newUser = { id: name || id, name, password };
-
-    this.users[ id ] = newUser;
-
-    return newUser;
+  async createOne({ name, password }: CreateUserDto): Promise<User> {
+    return plainToInstance(
+      User,
+      await this.repository.create({ name, password }),
+    );
   }
-
 }
