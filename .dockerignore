@@ -13,3 +13,7 @@ docker-compose.yml
 cdk.out
 cdk.json
 
+# sql script - becase they are not needed in the container
+sql-script.md
+
+

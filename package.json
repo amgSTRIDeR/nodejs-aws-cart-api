@@ -45,11 +45,6 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@aws-cdk/aws-apigatewayv2": "^1.204.0",
-    "@aws-cdk/aws-apigatewayv2-alpha": "^2.113.0-alpha.0",
-    "@aws-cdk/aws-apigatewayv2-integrations": "^1.204.0",
-    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.113.0-alpha.0",
-    "@aws-sdk/client-s3": "^3.465.0",
     "@aws-sdk/s3-request-presigner": "^3.465.0",
     "@nestjs/cli": "^10.0.3",
     "@nestjs/schematics": "^10.0.1",
